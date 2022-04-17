@@ -68,7 +68,7 @@ class ParaDispatcher(sockets: List[String]) extends Dispatcher(sockets) {
     // Resets the check portfolio prices
     val portfolioIds: List[Int] = checkReset(rung, 0)
 
-    workers.head.send(Partition(rung / 2, 1))
+    workers.head.send(Partition(rung / 2, 0))
     workers(1).send(Partition(rung / 2, rung / 2))
 
     // Partial runtimes from workers
